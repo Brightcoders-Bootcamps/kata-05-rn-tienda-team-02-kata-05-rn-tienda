@@ -17,9 +17,9 @@ const SignIn = ()=>
                 <InputText placeholder={"Email"} imagePath={emailIcon}></InputText>  
                 <InputText secureEntryValue={true} placeholder={"Password"} imagePath={passwordIcon}></InputText> 
                 <Text style={styles.forgotText}>Forgot Password?</Text>  
-                <ButtonSignCreate ButtonText={"Sign In"}></ButtonSignCreate> 
+                <ButtonSignCreate ButtonText={"SIGN IN"}></ButtonSignCreate> 
             </View>
-
+            
             <TouchableOpacity>
                 <Text style={styles.textOption}>CREATE ACCOUNT</Text>                                               
             </TouchableOpacity>            

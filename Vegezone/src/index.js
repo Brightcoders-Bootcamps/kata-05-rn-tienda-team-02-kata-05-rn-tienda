@@ -3,10 +3,8 @@ import {View, Text} from 'react-native';
 import SignIn from './scenes/SignIn'
 
 const Index = () => {
-  return (
-    <View>
-      <SignIn></SignIn>
-    </View>
+  return (    
+    <SignIn></SignIn>      
   );
 };
 
