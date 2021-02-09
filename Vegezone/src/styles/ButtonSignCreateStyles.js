@@ -7,13 +7,18 @@ const styles = StyleSheet.create({
         marginTop:150,
         height:50,
         justifyContent:'center',
-        borderRadius:15 
+        borderRadius:15,
+        flexDirection:'row',
+        paddingTop:10
     },
     buttonText:{
         textAlign:'center',
         fontSize:20,
         color:'#ffffff'
-
+    },
+    buttonImage:{
+        width:30,
+        height:30,        
     }
 })
 

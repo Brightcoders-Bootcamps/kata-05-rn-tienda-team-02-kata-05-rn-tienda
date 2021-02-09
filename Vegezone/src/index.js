@@ -1,12 +1,13 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+import SignIn from './scenes/SignIn'
 
-const index = () => {
+const Index = () => {
   return (
     <View>
-      <Text></Text>
+      <SignIn></SignIn>
     </View>
   );
 };
 
-export default index;
+export default Index;
