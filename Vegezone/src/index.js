@@ -4,9 +4,7 @@ import SignIn from './scenes/SignIn'
 
 const Index = () => {
   return (
-    <View>
       <SignIn></SignIn>
-    </View>
   );
 };
 
