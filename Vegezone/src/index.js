@@ -1,16 +1,17 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 
-import SignIn from './scenes/SignIn'
-import CreateAccount from './scenes/CreateAccount'
+import SignIn from './scenes/SignIn';
+import CreateAccount from './scenes/CreateAccount';
 import Welcome from './scenes/Welcome';
-import WelcomeMain from '../src/components/atoms/Welcome/WelcomeMain'
+import MainNavigation from './navigations/MainNavigation';
+import {NavigationContainer} from '@react-navigation/native';
 
 const Index = () => {
-  return (    
-    //<SignIn></SignIn>          
-    //<CreateAccount></CreateAccount>
-    <WelcomeMain></WelcomeMain>;      
+  return (
+    <NavigationContainer>
+      <MainNavigation></MainNavigation>
+    </NavigationContainer>
+    
   );
 };
 

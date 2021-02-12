@@ -11,7 +11,7 @@ import {signInCreateConstants} from '../utils/Constants/SignCreateConstants'
 import emailIcon from '../assets/images/email.png'
 import passwordIcon from '../assets/images/password.png'
 
-const SignIn = ()=>
+const SignIn = ({navigation})=>
 {
     return(
         <View style={styles.mainContainer}>
@@ -24,7 +24,7 @@ const SignIn = ()=>
                 <ButtonSignCreate ButtonText={signInCreateConstants.signinText}></ButtonSignCreate> 
             </View>
             
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>{navigation.navigate('CreateAccount')}}>
                 <Text style={styles.textOption}>{signInCreateConstants.createAccountText}</Text>                                               
             </TouchableOpacity>            
         </View>        
