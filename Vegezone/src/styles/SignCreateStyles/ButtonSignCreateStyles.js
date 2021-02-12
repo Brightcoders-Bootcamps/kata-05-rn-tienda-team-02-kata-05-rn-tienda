@@ -4,7 +4,7 @@ import {StyleSheet} from 'react-native'
 const styles = StyleSheet.create({
     buttonStyles:{
         backgroundColor:'#3cb3ab',
-        marginTop:100,
+        marginTop:100,        
         height:50,
         justifyContent:'center',
         borderRadius:15,

@@ -10,7 +10,7 @@ const Index = () => {
   return (    
     //<SignIn></SignIn>          
     //<CreateAccount></CreateAccount>
-    <WelcomeMain></WelcomeMain>;
+    <WelcomeMain></WelcomeMain>;      
   );
 };
 
