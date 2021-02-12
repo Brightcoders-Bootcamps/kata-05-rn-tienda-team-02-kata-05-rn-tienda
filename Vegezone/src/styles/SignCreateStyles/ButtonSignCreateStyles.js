@@ -9,16 +9,20 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         borderRadius:15,
         flexDirection:'row',
-        paddingTop:10
+        paddingTop:15,
+        paddingLeft:130,
+        paddingRight:130,
+        justifyContent:'space-around'
     },
     buttonText:{
         textAlign:'center',
-        fontSize:20,
+        fontSize:17,
         color:'#ffffff'
     },
     buttonImage:{
-        width:30,
-        height:30,        
+        width:20,
+        height:20, 
+        marginTop:3       
     }
 })
 

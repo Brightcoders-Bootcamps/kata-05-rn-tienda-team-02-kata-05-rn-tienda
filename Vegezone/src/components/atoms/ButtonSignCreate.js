@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableOpacity,Text,Image} from 'react-native'
-import styles from './../../styles/ButtonSignCreateStyles'
+import styles from '../../styles/SignCreateStyles/ButtonSignCreateStyles'
 
 const ButtonSignCreate = ({ButtonText})=>
 {

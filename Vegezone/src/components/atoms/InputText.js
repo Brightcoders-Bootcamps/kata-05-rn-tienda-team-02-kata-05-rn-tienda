@@ -1,6 +1,6 @@
 import React from 'react';
 import {TextInput,View,Image} from 'react-native'
-import styles from './../../styles/inputTextStyles'
+import styles from '../../styles/SignCreateStyles/inputTextStyles'
 
 const InputText = ({placeholder,imagePath,secureEntryValue})=>
 {
