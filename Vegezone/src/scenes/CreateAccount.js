@@ -1,8 +1,8 @@
 import React from 'react';
 import {View,Text,TouchableOpacity} from 'react-native';
 import styles from '../styles/SignCreateStyles/SignInSignUpStyles';
-import InputText from '../components/atoms/InputText';
-import ButtonSignCreate from '../components/atoms/ButtonSignCreate';
+import InputText from '../components/atoms/SignInCreate/InputText';
+import ButtonSignCreate from '../components/atoms/SignInCreate/ButtonSignCreate';
 
 import {signInCreateConstants} from '../utils/Constants/SignCreateConstants'
 
@@ -21,7 +21,7 @@ const CreateAccount = ({navigation})=>{
             <InputText placeholder={signInCreateConstants.emailText} imagePath={emailIcon}></InputText>  
             <InputText secureEntryValue={true} placeholder={signInCreateConstants.passwordText} imagePath={passwordIcon}></InputText> 
             <Text style={styles.forgotText}>{signInCreateConstants.forgotPassword}</Text>  
-            <ButtonSignCreate ButtonText={signInCreateConstants.createAccountText}></ButtonSignCreate> 
+            <ButtonSignCreate navigation={navigation} ButtonText={signInCreateConstants.createAccountText}></ButtonSignCreate> 
         </View>
         
         <TouchableOpacity onPress={()=>{navigation.navigate('SignIn')}}>
