@@ -9,7 +9,7 @@ import {
 import {styles} from '../../../styles/WelcomeStyles/index';
 import {WelcomeConstants} from '../../../utils/Constants/WelcomeConstants';
 
-const WelcomeMain = () => {
+const WelcomeMain = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -26,7 +26,7 @@ const WelcomeMain = () => {
             source={require('../../../assets/images/shopIcon.png')}></Image>
         </View>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('SignIn')}>
           <Text style={styles.textButton}>{WelcomeConstants.LetsShop}</Text>
         </TouchableOpacity>
       </View>
