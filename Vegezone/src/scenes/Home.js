@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,FlatList} from 'react-native';
+import {View,Text,FlatList, TouchableOpacity} from 'react-native';
 
 import HomeTopButton from '../components/atoms/Home/HomeTopButton';
 import ProductItem from '../components/atoms/Home/ProductItem';
@@ -11,7 +11,8 @@ import buttonCart from '../assets/images/shoppingCart.png';
 
 import productsData from '../utils/Constants/productData';
 
-const Home = () =>
+
+const Home = ({navigation}) =>
 {    
     const renderItem = ({ item }) => {                
         return (
@@ -24,10 +25,9 @@ const Home = () =>
       }
     
     return(
-        <View style={styles.mainContainer}>
-
+        <View style={styles.mainContainer}>            
             <View style={styles.topOptionsContainer}>
-                <HomeTopButton imagePath={buttonMenu}></HomeTopButton>                
+                <HomeTopButton navigation={navigation} imagePath={buttonMenu}></HomeTopButton>                
                 <Text style={styles.homeText}>Home</Text>
                 <HomeTopButton imagePath={buttonCart}></HomeTopButton> 
             </View>
@@ -41,7 +41,7 @@ const Home = () =>
                     keyExtractor={(item) => "#" + item.id}  
                     numColumns={3}                                                                       
                 />
-            </View>
+            </View>            
 
         </View>
     );

@@ -6,6 +6,7 @@ import Welcome from './scenes/Welcome';
 import MainNavigation from './navigations/MainNavigation';
 import {NavigationContainer} from '@react-navigation/native';
 
+
 const Index = () => {
   return (
     <NavigationContainer>
