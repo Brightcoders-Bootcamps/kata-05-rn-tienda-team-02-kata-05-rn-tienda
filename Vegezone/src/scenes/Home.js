@@ -17,6 +17,7 @@ const Home = ({navigation}) =>
     const renderItem = ({ item }) => {                
         return (
           <ProductItem
+            navigation={navigation}
             imageProduct={item.image}  
             nameProduct={item.name}
             priceProduct={item.price}                                 

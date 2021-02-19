@@ -6,6 +6,7 @@ import SignIn from '../scenes/SignIn';
 import CreateAccount from '../scenes/CreateAccount';
 import Home from '../scenes/Home';
 import HomeNavigation from '../navigations/HomeNavigation';
+import ProductDetails from '../scenes/ProductDetails';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ const MainNavigation = () => {
             <Stack.Screen name="SignIn" component={SignIn} />
             <Stack.Screen name="CreateAccount" component={CreateAccount} />            
             <Stack.Screen name="HomeNavigation" component={HomeNavigation} />
+            <Stack.Screen name="ProductDetails" component={ProductDetails} />
          </Stack.Navigator>       
     )
 }

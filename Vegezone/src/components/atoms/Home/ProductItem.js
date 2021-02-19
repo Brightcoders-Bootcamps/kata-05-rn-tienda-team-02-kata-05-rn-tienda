@@ -2,9 +2,15 @@ import React from 'react';
 import {TouchableOpacity,Text,Image} from 'react-native';
 
 import styles from '../../../styles/HomeStyles/productItemStyles'
-const ProductItem = ({imageProduct,nameProduct,priceProduct})=>{
+const ProductItem = ({imageProduct,nameProduct,priceProduct,navigation})=>{
     return(
-        <TouchableOpacity style={styles.itemStyles}>
+        <TouchableOpacity onPress={()=>{navigation.navigate('ProductDetails',
+        {
+            image:imageProduct,
+            name:nameProduct,
+            price:priceProduct
+        }        
+        )}} style={styles.itemStyles}>
             <Image style={styles.imageStyles} source = {{uri:imageProduct}}></Image>
             <Text style={styles.textName}>{nameProduct}</Text>
             <Text style={styles.textPrice}>{"$" + priceProduct}</Text> 
