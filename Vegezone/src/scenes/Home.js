@@ -11,9 +11,16 @@ import buttonCart from '../assets/images/shoppingCart.png';
 
 import productsData from '../utils/Constants/productData';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const Home = ({navigation}) =>
 {    
+    let arrayStorage = [];
+
+    let storageJSON = JSON.stringify(arrayStorage)
+    AsyncStorage.setItem('miOrdersStorage', storageJSON);
+    
     const renderItem = ({ item }) => {                
         return (
           <ProductItem
