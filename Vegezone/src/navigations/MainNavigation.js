@@ -4,7 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Welcome from '../scenes/Welcome';
 import SignIn from '../scenes/SignIn';
 import CreateAccount from '../scenes/CreateAccount';
-import Home from '../scenes/Home';
 import HomeNavigation from '../navigations/HomeNavigation';
 import ProductDetails from '../scenes/ProductDetails';
 import MyOrders from '../scenes/MyOrders';

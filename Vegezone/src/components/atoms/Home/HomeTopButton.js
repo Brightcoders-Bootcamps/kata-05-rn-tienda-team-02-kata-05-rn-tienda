@@ -5,7 +5,15 @@ import styles from '../../../styles/HomeStyles/TopButtonStyles'
 
 const HomeTopButton = ({imagePath,navigation})=>{    
     return(
-        <TouchableOpacity onPress={()=>{navigation.openDrawer()}}>
+        <TouchableOpacity onPress={()=>{
+            if(imagePath == 7)
+            {
+                navigation.navigate('MyOrders');
+            }
+            else{
+                navigation.openDrawer();                
+            }
+        }}>
             <Image style={styles.buttonStyles} source={imagePath}></Image>            
         </TouchableOpacity>
     );

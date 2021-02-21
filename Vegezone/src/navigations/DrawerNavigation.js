@@ -3,8 +3,11 @@ import { View, Text,Image, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import {createDrawerNavigator,DrawerContentScrollView,DrawerItemList,DrawerItem} from '@react-navigation/drawer';
 
+import auth from '@react-native-firebase/auth';
+
 import styles from '../styles/DrawerMenuStyles/DrawerMenuStyles'
 import Home from '../scenes/Home'
+import MyOrders from '../scenes/MyOrders'
 
 import homeIcon from '../assets/images/homeIcon.png'
 import cartIcon from '../assets/images/shoppingCart.png'
@@ -13,8 +16,6 @@ import bellIcon from '../assets/images/bellIcon.png'
 import phoneIcon from '../assets/images/phoneIcon.png'
 import feedIcon from '../assets/images/feedIcon.png'
 import logoutIcon from '../assets/images/logoutIcon.png'
-
-
 
 function ItemMenu(props)
 {
@@ -35,13 +36,19 @@ function CustomDrawerContent(props) {
         </View>  
 
         <ItemMenu imageIcon={homeIcon} itemText="Home" navigation={()=> props.navigation.navigate('Home')}/> 
-        <ItemMenu imageIcon={cartIcon} itemText="My Orders"/> 
+        <ItemMenu imageIcon={cartIcon} itemText="My Orders"  navigation={()=> props.navigation.navigate('MyOrders')}/> 
         <ItemMenu imageIcon={priceIcon} itemText="My Orders"/> 
         <ItemMenu imageIcon={bellIcon} itemText="Notifications"/> 
         <ItemMenu imageIcon={bellIcon} itemText="Our Branches"/>
         <ItemMenu imageIcon={phoneIcon} itemText="Contact Us"/>
         <ItemMenu imageIcon={feedIcon} itemText="Feedback"/>
-        <ItemMenu imageIcon={logoutIcon} itemText="Logout"/>
+        <ItemMenu imageIcon={logoutIcon} itemText="Logout" navigation={()=> {
+          auth().signOut()
+          .then(() => {
+            props.navigation.navigate('Welcome');
+            console.log("sesion cerrada");
+          });          
+        }}/>
         
       </View>        
   );
@@ -57,7 +64,8 @@ function MyDrawer() {
         width: 240,
       }}
     drawerContent={props => <CustomDrawerContent {...props}/>}>
-      <Drawer.Screen name="Home" component={Home} />       
+      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="MyOrders" component={MyOrders} />       
     </Drawer.Navigator>
   );
 }
