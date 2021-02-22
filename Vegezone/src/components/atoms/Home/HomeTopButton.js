@@ -3,7 +3,7 @@ import {TouchableOpacity,Image} from 'react-native';
 
 import styles from '../../../styles/HomeStyles/TopButtonStyles'
 
-const HomeTopButton = ({imagePath,navigation})=>{    
+const HomeTopButton = ({imagePath,navigation})=>{        
     return(
         <TouchableOpacity onPress={()=>{
             if(imagePath == 7)

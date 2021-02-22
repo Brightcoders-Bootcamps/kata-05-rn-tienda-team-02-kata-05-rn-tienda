@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 
-import {View, Text, ImageBackground, TouchableOpacity,FlatList} from 'react-native';
+import {View, Text, ImageBackground, TouchableOpacity,FlatList,Alert} from 'react-native';
 import styles from '../styles/MyOrdersStyles/MyOrdersStyles';
 import HomeTopButton from '../components/atoms/Home/HomeTopButton';
 import buttonMenu from '../assets/images/burguerButton.png';
@@ -12,7 +12,11 @@ import TextSubTotal from '../components/atoms/MyOrders/TextSubTotal'
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const MyOrders = ()=>{   
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
+
+
+const MyOrders = ({navigation})=>{   
 
     const [DATA,setDATA] = useState(null);             
     
@@ -20,7 +24,37 @@ const MyOrders = ()=>{
         .then((res)=>{    
             var miDataCarrito = JSON.parse(res);                         
             setDATA(miDataCarrito);                    
-        })            
+        })   
+        
+    
+        function saveOrderDataFirebase()
+        {
+            firestore().collection('vegezoneData').doc(auth().currentUser.uid).get()
+            .then(documentSnapshot => {            
+                if (documentSnapshot.exists) {  
+                    //Añadimos subtotal a la orden//   
+                    AsyncStorage.getItem('subTotal')
+                    .then((res)=>{    
+                        var dataWithSubTotal = DATA.push({res}); 
+                        setDATA(dataWithSubTotal);                                               
+                        
+                        //Jalamos la data de firebase y se la pasamos como string//
+                        var userData = documentSnapshot.data();
+                        userData.MyOrders.push(JSON.stringify(DATA));
+                        firestore().collection('vegezoneData').doc(auth().currentUser.uid)
+                        .set(userData);
+
+                        //Reiniciamos el storage de la orden para las nuevas ordenes//
+                        AsyncStorage.removeItem('miOrdersStorage')
+
+                        let arrayStorage = [];                    
+                        let storageJSON = JSON.stringify(arrayStorage)
+                        AsyncStorage.setItem('miOrdersStorage', storageJSON);
+                    })                                                            
+                }
+            });      
+        } 
+                
 
     const renderItem = ({ item }) => {                
         return (
@@ -46,7 +80,10 @@ const MyOrders = ()=>{
 
              <View style={styles.topSection}>                              
                 <TextSubTotal></TextSubTotal>                
-                <TouchableOpacity onPress={()=>{console.log(DATA)}} style={styles.buttonCheck}>
+                <TouchableOpacity onPress={()=>{
+                    saveOrderDataFirebase();
+                    navigation.navigate("Home");
+                }} style={styles.buttonCheck}>
                     <Text style={styles.textButton}>Check Out Now</Text>
                 </TouchableOpacity>
             </View>        

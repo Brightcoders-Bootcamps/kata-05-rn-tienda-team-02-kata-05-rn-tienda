@@ -17,6 +17,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const Home = ({navigation}) =>
 {    
     let arrayStorage = [];
+    console.log("primer storage definido" + arrayStorage);
     let storageJSON = JSON.stringify(arrayStorage)
     AsyncStorage.setItem('miOrdersStorage', storageJSON);
 
