@@ -11,6 +11,9 @@ import emailIcon from '../assets/images/email.png'
 import passwordIcon from '../assets/images/password.png'
 
 import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
+
+
 
 const CreateAccount = ({navigation})=>{
     
@@ -22,7 +25,14 @@ const CreateAccount = ({navigation})=>{
     {
         auth().createUserWithEmailAndPassword(newUserEmail, newUserPassword)
         .then(()=>{
+
             console.log('usuario creado')
+
+            firestore().collection('vegezoneData').doc(auth().currentUser.uid)
+            .set({
+                orders:[]
+            })
+
             navigation.navigate('HomeNavigation')
         })
     }
