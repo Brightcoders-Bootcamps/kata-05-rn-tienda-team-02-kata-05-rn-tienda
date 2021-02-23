@@ -46,7 +46,7 @@ const ProductDetails = ({route})=>{
                 
             <View style={styles.containerButton}>
                 <TouchableOpacity style={styles.buttonCart}>
-                    <Text style={styles.textButton}>Add To Cart</Text>
+                    <Text style={styles.textButton}>Add To Car</Text>
                 </TouchableOpacity>
             </View>   
             </View> 
