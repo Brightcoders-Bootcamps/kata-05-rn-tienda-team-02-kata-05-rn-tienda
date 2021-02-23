@@ -11,9 +11,21 @@ import buttonCart from '../assets/images/shoppingCart.png';
 
 import productsData from '../utils/Constants/productData';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const Home = ({navigation}) =>
 {    
+    let arrayStorage = [];
+    console.log("primer storage definido" + arrayStorage);
+    let storageJSON = JSON.stringify(arrayStorage)
+    AsyncStorage.setItem('miOrdersStorage', storageJSON);
+
+    let subTotal = 0;
+    let subTotalJson = JSON.stringify(subTotal);
+    AsyncStorage.setItem('subTotal', subTotalJson);
+
+    
     const renderItem = ({ item }) => {                
         return (
           <ProductItem
@@ -30,7 +42,7 @@ const Home = ({navigation}) =>
             <View style={styles.topOptionsContainer}>
                 <HomeTopButton navigation={navigation} imagePath={buttonMenu}></HomeTopButton>                
                 <Text style={styles.homeText}>Home</Text>
-                <HomeTopButton imagePath={buttonCart}></HomeTopButton> 
+                <HomeTopButton navigation={navigation} imagePath={buttonCart}></HomeTopButton> 
             </View>
 
             <View style={styles.productListContainer}>
