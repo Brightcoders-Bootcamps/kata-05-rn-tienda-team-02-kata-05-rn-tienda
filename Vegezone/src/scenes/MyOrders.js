@@ -8,6 +8,8 @@ import buttonCart from '../assets/images/shoppingCart.png';
 
 import OrderItem from '../components/atoms/MyOrders/OrderItem';
 
+import Icon from 'react-native-vector-icons/Feather';
+
 import TextSubTotal from '../components/atoms/MyOrders/TextSubTotal'
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -73,7 +75,7 @@ const MyOrders = ({navigation})=>{
             <ImageBackground source={require('../assets/images/backgroundVegezone.jpeg')} style={styles.size}></ImageBackground>                       
 
             <View style={styles.topSection}>
-                <HomeTopButton imagePath={buttonMenu}></HomeTopButton>                                                
+                <Icon name={'menu'} size={35}  color={'white'} onPress={()=>{navigation.openDrawer()}}></Icon>
                 <Text View style={styles.textTop}>My Orders</Text>
                 <HomeTopButton imagePath={buttonCart}></HomeTopButton>                
             </View>
