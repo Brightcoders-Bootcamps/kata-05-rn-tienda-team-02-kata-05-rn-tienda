@@ -39,11 +39,11 @@ const ProductDetails = ({route,navigation})=>{
     
     return(
         <View style={styles.mainContainer}>
-            <View style={styles.topSection}>
+            {/* <View style={styles.topSection}>
                 <HomeTopButton  imagePath={buttonMenu}></HomeTopButton> 
                 <Text style={styles.textTop}>Details</Text>
                 <HomeTopButton imagePath={buttonCart}></HomeTopButton> 
-            </View>
+            </View> */}
 
             <View style={styles.mainContentDetails}>
                 <View style={styles.containerImage}>

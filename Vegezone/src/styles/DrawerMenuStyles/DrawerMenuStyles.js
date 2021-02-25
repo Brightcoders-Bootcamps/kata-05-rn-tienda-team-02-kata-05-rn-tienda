@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
         alignSelf:'center',
         color:'white',
         fontSize:30,
-        marginBottom:20
+        marginBottom:20,
+        fontFamily: 'Courgette-Regular'
     },
     imageMenu:{
         alignSelf:'center',

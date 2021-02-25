@@ -30,10 +30,10 @@ const CreateAccount = ({navigation})=>{
 
             firestore().collection('vegezoneData').doc(auth().currentUser.uid)
             .set({
-                orders:[]
+                MyOrders:[]
             })
 
-            navigation.navigate('HomeNavigation')
+            navigation.navigate('Home')
         })
     }
 

@@ -22,7 +22,7 @@ const SignIn = ({navigation})=>
         auth().signInWithEmailAndPassword(userEmail,userPassword)
         .then(() => {
             console.log('Usuario Logueado');            
-            navigation.navigate('HomeNavigation')
+            navigation.navigate('Home')
         })
         .catch(error => {            
             if (error.code === 'auth/invalid-email') {
