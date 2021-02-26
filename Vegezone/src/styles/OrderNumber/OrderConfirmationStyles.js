@@ -1,10 +1,9 @@
-import color from '../utils/Colors/colors'
 import {StyleSheet} from 'react-native';
 
 export default stylesOrder = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: color.verde,
+      backgroundColor: '#3cb3ab',
     },
     image: {
       flex: 1,
@@ -21,8 +20,8 @@ export default stylesOrder = StyleSheet.create({
       paddingVertical: 30,
     },
     size: {
-      width: 1000,
-      height: 600,
+      width: 360,
+      height: 500,
       resizeMode: 'cover',
       opacity: 0.2,
       alignItems: 'flex-start',
@@ -37,7 +36,7 @@ export default stylesOrder = StyleSheet.create({
     orderText: {
       justifyContent: 'center',
       alignItems: 'center',
-      marginTop: 100,
+      marginTop: 10
     },
     circule: {
       width: 120,
@@ -62,9 +61,14 @@ export default stylesOrder = StyleSheet.create({
       height: 70,
     },
     textOrder: {
-      color: color.verde,
+      color: '#54b5af',
       fontSize: 30,
       fontWeight: '500'
-    }
+    },
+    textTop:{
+      color:'white',
+      fontSize:20,
+      fontWeight:'600'
+  }
   });
 

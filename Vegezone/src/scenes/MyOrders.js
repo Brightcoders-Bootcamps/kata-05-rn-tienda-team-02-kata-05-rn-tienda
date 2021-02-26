@@ -84,7 +84,7 @@ const MyOrders = ({navigation})=>{
                 <TextSubTotal></TextSubTotal>                
                 <TouchableOpacity onPress={()=>{
                     saveOrderDataFirebase();
-                    navigation.navigate("Home");
+                    navigation.navigate("ConfirmationOrder");
                 }} style={styles.buttonCheck}>
                     <Text style={styles.textButton}>Check Out Now</Text>
                 </TouchableOpacity>
@@ -100,4 +100,5 @@ const MyOrders = ({navigation})=>{
         </View>        
     );
 }
+
 export default MyOrders;

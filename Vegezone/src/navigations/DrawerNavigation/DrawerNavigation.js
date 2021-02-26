@@ -8,7 +8,8 @@ import auth from '@react-native-firebase/auth';
 import styles from '../../styles/DrawerMenuStyles/DrawerMenuStyles'
 import Home from '../../scenes/Home'
 import MyOrders from '../../scenes/MyOrders'
-import MainTabScreen from '../HomeTab/TabNavigation'
+import MainTabScreen from '../HomeTab/TabNavigation';
+import ConfirmationOrder from '../../scenes/OrderNumber'
 
 import homeIcon from '../../assets/images/homeIcon.png'
 import cartIcon from '../../assets/images/shoppingCart.png'
@@ -73,7 +74,8 @@ function MyDrawer() {
       <Drawer.Screen name="CreateAccount" component={CreateAccount} options={{ headerShown: false}}/> 
       <Drawer.Screen name='Home' component={MainTabScreen}></Drawer.Screen>
       <Drawer.Screen name="Details" component={MainTabScreen} />      
-      <Drawer.Screen name="MyOrders" component={MainTabScreen}/>       
+      <Drawer.Screen name="MyOrders" component={MainTabScreen}/> 
+      <Drawer.Screen name="ConfirmationOrder" component={MainTabScreen}/>      
     </Drawer.Navigator>
   );
 }
