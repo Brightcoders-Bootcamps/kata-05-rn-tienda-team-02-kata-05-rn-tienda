@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import HomeStackTab from './HomeTabNavigation'
 import MyOrders from '../../scenes/MyOrders'
+import ConfirmationOrder from '../../scenes/OrderNumber';
 
 
 
@@ -77,7 +78,7 @@ function MainTabScreen() {
                 )   
             }
             }}/>  
-            <Tab.Screen name="Messenger" component={HomeStackTab} 
+            <Tab.Screen name="ConfirmationOrder" component={ConfirmationOrder} 
             options={{
               tabBarLabel:'',
               tabBarIcon:() =>(

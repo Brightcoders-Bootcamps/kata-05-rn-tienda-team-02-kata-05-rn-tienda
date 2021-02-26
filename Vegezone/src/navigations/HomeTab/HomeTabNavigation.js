@@ -9,6 +9,7 @@ import ProductDetails from '../../scenes/ProductDetails';
 import Icon from 'react-native-vector-icons/Feather';
 import IconMat from 'react-native-vector-icons/MaterialIcons'
 import MyOrders from '../../scenes/MyOrders';
+import ConfirmationOrder from '../../scenes/OrderNumber';
 
 const Stack = createStackNavigator();
 
@@ -50,6 +51,7 @@ const HomeStackTab = ({navigation}) => {
                    elevation:0
                  }
                 }}/>
+            <Stack.Screen name="ConfirmationOrder" component={ConfirmationOrder}/>
          </Stack.Navigator>       
     )
 }

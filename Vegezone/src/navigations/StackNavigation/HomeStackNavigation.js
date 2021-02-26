@@ -9,6 +9,8 @@ import ProductDetails from '../../scenes/ProductDetails';
 import Icon from 'react-native-vector-icons/Feather';
 import IconMat from 'react-native-vector-icons/MaterialIcons'
 import MyOrders from '../../scenes/MyOrders';
+import OrderConfirmation from '../../scenes/OrderNumber'
+import ConfirmationOrder from '../../scenes/OrderNumber';
 
 const Stack = createStackNavigator();
 
@@ -36,6 +38,7 @@ const HomeStackNavigation = ({navigation}) => {
                 }}
             />
             <Stack.Screen name="MyOrders" component={MyOrders}/>
+            <Stack.Screen name="ConfirmationOrder" component={ConfirmationOrder}/>
          </Stack.Navigator>       
     )
 }
