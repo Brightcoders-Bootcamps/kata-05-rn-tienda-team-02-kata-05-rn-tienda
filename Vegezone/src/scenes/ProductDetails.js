@@ -32,7 +32,7 @@ const ProductDetails = ({route,navigation})=>{
         name + " " + "Added",
         "Price" + " " +"$" + price + " " + "/" + " " + "Quantity to order:" + " " + quantity,        
         [        
-            { text: "OK", onPress: () => navigation.navigate("Home")}
+            { text: "OK", onPress: () => navigation.navigate("HomeNavigation")}
         ],
         { cancelable: false }
     );

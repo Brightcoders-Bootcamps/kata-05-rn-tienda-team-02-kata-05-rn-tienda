@@ -33,25 +33,8 @@ const HomeStackTab = ({navigation}) => {
                  }
                 }}
             />
-             <Stack.Screen name="MyOrders" component={MyOrders} 
-             options={{ 
-                headerTintColor: '#A5BCD0',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                  },
-                headerTitleAlign:'My orders',
-                headerLeft: () => (
-                        <Icon name={'menu'} size={32} style={{padding:20}} color={'#A5BCD0'} onPress={()=>{navigation.openDrawer()}}></Icon>    
-                        // <Image source={require('../../assets/images/menu.svg')} onPress={()=>{navigation.openDrawer()}}></Image>           
-                 ),
-                 headerRight:() =>(
-                    <IconMat name={'shopping-cart'} size={32} style={{padding:20}} color={'#A5BCD0'}></IconMat>    
-                 ),
-                 headerStyle:{
-                   elevation:0
-                 }
-                }}/>
-            <Stack.Screen name="ConfirmationOrder" component={ConfirmationOrder}/>
+             <Stack.Screen name="MyOrders" component={MyOrders}  options={{ headerShown: false}}/>
+            <Stack.Screen name="ConfirmationOrder" component={ConfirmationOrder} options={{ headerShown: false}}/>
          </Stack.Navigator>       
     )
 }

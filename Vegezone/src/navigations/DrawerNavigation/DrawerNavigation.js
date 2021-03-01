@@ -42,7 +42,7 @@ function CustomDrawerContent(props) {
 
         <ItemMenu imageIcon={homeIcon} itemText="Home" navigation={()=> props.navigation.navigate('HomeNavigation')}/> 
         <ItemMenu imageIcon={cartIcon} itemText="My Orders"  navigation={()=> props.navigation.navigate('MyOrders')}/> 
-        <ItemMenu imageIcon={priceIcon} itemText="My Orders"/> 
+        <ItemMenu imageIcon={priceIcon} itemText="Offers"/> 
         <ItemMenu imageIcon={bellIcon} itemText="Notifications"/> 
         <ItemMenu imageIcon={bellIcon} itemText="Our Branches"/>
         <ItemMenu imageIcon={phoneIcon} itemText="Contact Us"/>
@@ -74,7 +74,7 @@ function MyDrawer() {
       <Drawer.Screen name="CreateAccount" component={CreateAccount} options={{ headerShown: false}}/> 
       <Drawer.Screen name='Home' component={MainTabScreen}></Drawer.Screen>
       <Drawer.Screen name="Details" component={MainTabScreen} />      
-      <Drawer.Screen name="MyOrders" component={MainTabScreen}/> 
+      <Drawer.Screen name="MyOrders" component={MyOrders}/> 
       <Drawer.Screen name="ConfirmationOrder" component={MainTabScreen}/>      
     </Drawer.Navigator>
   );

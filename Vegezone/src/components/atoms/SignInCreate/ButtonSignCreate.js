@@ -10,7 +10,7 @@ const ButtonSignCreate = ({ButtonText,navigation,triggerLogin,triggerCreate})=>
                 triggerLogin();                
             }else if(ButtonText === 'Create Account'){
                 triggerCreate();
-                navigation.navigate('HomeNavigation')                                
+                navigation.navigate('Home')                                
             }                                                     
         }} style={styles.buttonStyles}>
             <Image style={styles.buttonImage} source={require('../../../assets/images/arrowButton.png')}></Image>
