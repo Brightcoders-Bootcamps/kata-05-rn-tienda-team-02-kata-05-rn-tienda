@@ -9,29 +9,11 @@ import Icon from 'react-native-vector-icons/Feather';
 import HomeStackTab from './HomeTabNavigation'
 import MyOrders from '../../scenes/MyOrders'
 import ConfirmationOrder from '../../scenes/OrderNumber';
-import OrderStackTab from './OrderTab';
+import OrderStackTab from '../HomeTab/OrderTab'
 
-
-
-function ItemMenu(props)
-{
-    return(
-        <TouchableOpacity style={styles.itemMenuContainer}>
-            <Text style={styles.itemText}>{props.itemText}</Text>
-        </TouchableOpacity>
-    )
-}
-
-function CustomDrawerContent(props) {
-  return (
-      <View>
-        <ItemMenu imageIcon={homeIcon} itemText="Home" onPress={()=> props.navigation.navigate('Home')}/> 
-      </View>        
-  );
-}
 
 const Tab = createMaterialBottomTabNavigator();
-function MainTabScreen() {
+function MainTab() {
   return (
     <Tab.Navigator
     activeColor="#f0edf6"
@@ -92,4 +74,4 @@ function MainTabScreen() {
 
 
 
-export default MainTabScreen;
+export default MainTab;

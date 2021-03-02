@@ -21,6 +21,7 @@ import logoutIcon from '../../assets/images/logoutIcon.png'
 import SignIn from '../../scenes/SignIn';
 import Welcome from '../../scenes/Welcome';
 import CreateAccount from '../../scenes/CreateAccount';
+import MainTab from '../HomeTab/Tab';
 
 function ItemMenu(props)
 {
@@ -74,7 +75,7 @@ function MyDrawer() {
       <Drawer.Screen name="CreateAccount" component={CreateAccount} options={{ headerShown: false}}/> 
       <Drawer.Screen name='Home' component={MainTabScreen}></Drawer.Screen>
       <Drawer.Screen name="Details" component={MainTabScreen} />      
-      <Drawer.Screen name="MyOrders" component={MyOrders}/> 
+      <Drawer.Screen name="MyOrders" component={MainTab}/> 
       <Drawer.Screen name="ConfirmationOrder" component={MainTabScreen}/>      
     </Drawer.Navigator>
   );
